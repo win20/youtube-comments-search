@@ -3,8 +3,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'background-color': '#1E1E1',
-      }
+        background: "#1e1e1e",
+        card: "#404040",
+        textWhite: "#DBDBDB",
+        gradientOrange: "#FFAF4D",
+        gradientRed: "#FF328E"
+      },
+      fontFamily: {
+        sans: ['Noto Sans', 'Arial']
+      },
     },
   },
   content: [
