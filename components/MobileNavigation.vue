@@ -8,6 +8,15 @@
 		</Switch>
 		<Icon name="iconamoon:menu-burger-horizontal-bold" color="white" size="28" class="" />
 	</div>
+	<div class="bg-white absolute right-0 top-0 w-6/12 h-full">
+		<Icon name="basil:cross-outline" color="black" size="40" class="absolute right-0" />
+		<ul class="text-center relative space-y-16 mt-[50%]">
+			<li>Report an issue</li>
+			<li>Github</li>
+		</ul>
+
+		<span class="absolute bottom-2 right-3 ml-5 text-sm font-thin">10 searches made</span>
+	</div>
 </template>
 
 <script setup lang="ts">
