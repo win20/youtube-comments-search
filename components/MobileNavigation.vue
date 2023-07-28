@@ -1,5 +1,5 @@
 <template>
-	<div class="flex justify-between mt-4 mx-5">
+	<div class="flex justify-between mt-4 mx-5 md:hidden">
 		<Switch v-model="enabled" :class="enabled ? 'bg-card' : 'bg-card'"
 			class="relative inline-flex h-7 w-12 items-center rounded-full">
 			<span class="sr-only">Enable notifications</span>

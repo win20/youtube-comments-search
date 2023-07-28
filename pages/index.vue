@@ -1,9 +1,9 @@
 <template>
   <MobileNavigation />
-  <div class="bg-card text-center rounded-2xl h-screen mt-6 pt-12 flex items-center">
-    <div class="flex-col pb-36 mx-auto">
-      <h1 class="text-xl text-textWhite font-bold">Search for a Youtube video</h1>
-      <p class="text-textWhite text-sm">Please enter the full URL for the video</p>
+  <div class="bg-card text-center rounded-2xl h-screen mt-6 pt-12 flex items-center md:h-72 md:px-10 md:m-auto">
+    <div class="flex-col pb-36 mx-auto md:pt-24 md:px-12">
+      <h1 class="text-xl text-textWhite font-bold md:text-3xl">Search for a Youtube video</h1>
+      <p class="text-textWhite text-sm md:text-lg">Please enter the full URL for the video</p>
       <Search />
     </div>
   </div>
@@ -15,7 +15,7 @@ import MobileNavigation from '../components/MobileNavigation.vue';
 
 useHead({
   bodyAttrs: {
-    class: 'bg-background font-sans overflow-hidden'
+    class: 'bg-background font-sans overflow-hidden md:h-screen md:flex md:items-center md:justify-center'
   },
 });
 
