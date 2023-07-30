@@ -17,8 +17,16 @@
 	</div>
 
 	<div class="hidden md:block md:absolute md:top-8 md:right-0 text-textWhite text-sm font-bold">
-		<span class="mr-20"><a href="#">Report an issue</a></span>
-		<span class="mr-8"><a href="#">Github</a></span>
+		<span class="mr-20">
+			<a href="https://github.com/win20/youtube-comments-search/issues" target="_blank">
+				Report an issue
+			</a>
+		</span>
+		<span class="mr-8">
+			<a href="https://github.com/win20" target="_blank">
+				Github
+			</a>
+		</span>
 	</div>
 
 	<!-- Sidebar for mobile -->
@@ -28,8 +36,9 @@
 				<Icon name="basil:cross-outline" color="black" size="40" class="absolute right-0" />
 			</button>
 			<ul class="text-center relative space-y-16 mt-[50%]">
-				<li><a href="#">Report an issue</a></li>
-				<li><a href="#">Github</a></li>
+				<li><a href="https://github.com/win20/youtube-comments-search/issues" target="_blank">Report an issue</a>
+				</li>
+				<li><a href="https://github.com/win20" target="_blank">Github</a></li>
 			</ul>
 
 			<span class="absolute bottom-2 right-3 ml-5 text-sm font-thin">10 searches made</span>
