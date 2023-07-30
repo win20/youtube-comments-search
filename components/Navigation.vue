@@ -1,5 +1,5 @@
 <template>
-	<div class="flex justify-between mt-4 mx-5 md:absolute md:top-0 md:left-0">
+	<div class="flex justify-between mt-4 mx-5 md:absolute md:top-3 md:left-0 md:text-sm">
 		<Switch v-model="enabled" :class="enabled ? 'bg-card' : 'bg-card'"
 			class="relative inline-flex h-7 w-12 items-center rounded-full">
 			<span class="sr-only">Enable notifications</span>
@@ -9,11 +9,14 @@
 		<button @click="toggleSidebar" class="md:hidden">
 			<Icon name="iconamoon:menu-burger-horizontal-bold" color="white" size="28" class="" />
 		</button>
-		<span class="hidden md:block ml-3 font-normal text-textWhite">Switch to light mode</span>
-		<span class="hidden md:block ml-20 font-normal text-textWhite">50 searches made</span>
+
+		<div class="hidden md:flex mt-1 font-normal text-textWhite">
+			<span class="ml-3">Switch to light mode</span>
+			<span class="ml-20">50 searches made</span>
+		</div>
 	</div>
 
-	<div class="hidden md:block md:absolute md:top-5 md:right-0 text-textWhite font-bold">
+	<div class="hidden md:block md:absolute md:top-8 md:right-0 text-textWhite text-sm font-bold">
 		<span class="mr-20"><a href="#">Report an issue</a></span>
 		<span class="mr-8"><a href="#">Github</a></span>
 	</div>
