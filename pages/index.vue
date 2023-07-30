@@ -1,5 +1,5 @@
 <template>
-  <MobileNavigation />
+  <Navigation />
   <div class="bg-card text-center rounded-2xl h-screen mt-6 pt-12 flex items-center md:h-72 md:px-10 md:m-auto">
     <div class="flex-col pb-36 mx-auto md:pt-24 md:px-12">
       <h1 class="text-xl text-textWhite font-bold md:text-3xl">Search for a Youtube video</h1>
@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import Search from '../components/Search.vue';
-import MobileNavigation from '../components/MobileNavigation.vue';
+import Navigation from '../components/Navigation.vue';
 
 useHead({
   bodyAttrs: {
