@@ -27,11 +27,10 @@
 
 <script setup lang="ts">
 import Navigation from '../components/Navigation.vue';
-let classes = 'bg-background font-sans overflow-hidden md:h-screen md:flex md:items-center md:justify-center ';
 
 useHead({
   bodyAttrs: {
-    class: classes
+    class: 'bg-background font-sans overflow-hidden md:h-screen md:flex md:items-center md:justify-center',
   },
 });
 </script>
