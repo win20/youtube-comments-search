@@ -22,6 +22,13 @@ export default defineNuxtConfig({
     families: {
       'Noto+Sans': [300, 400, 700],
     }
+  },
+
+  runtimeConfig: {
+    youtubeApiKey: '',
+    public: {
+      baseUrl: '',
+    }
   }
 })
 
