@@ -7,8 +7,6 @@
       <p class="text-textWhite text-sm md:text-md">Please enter the full URL for the video</p>
       <Search />
     </div>
-
-    <button class="bg-white" @click="test()">TEST</button>
   </div>
 </template>
 
@@ -24,9 +22,7 @@ useHead({
   },
 });
 
-
-
-const test = async () => {
+const getVideo = async () => {
   try {
     const response = await axios.get('http://localhost:3000/api/get-video');
     const data = response.data as Video;

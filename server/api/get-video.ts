@@ -10,12 +10,14 @@ export default defineEventHandler(async (event): Promise<Video | unknown> => {
     key: config.youtubeApiKey
   }
 
-  try {
-    const response = await axios.get('https://www.googleapis.com/youtube/v3/videos', {
-      params
-    })
-    return response.data;
-  } catch (error) {
-    return error;
-  }
+  console.log(getRequestURL(event).searchParams.get('videoId'));
+
+  // try {
+  //   const response = await axios.get('https://www.googleapis.com/youtube/v3/videos', {
+  //     params
+  //   })
+  //   return response.data;
+  // } catch (error) {
+  //   return error;
+  // }
 })
