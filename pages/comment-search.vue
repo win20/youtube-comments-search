@@ -18,7 +18,7 @@
             <div class="text-xs md:text-sm">100k views | 2 hours ago</div>
           </div>
         </div>
-
+        <div>{{ video.title }}</div>
         <Search />
       </div>
     </div>
@@ -27,12 +27,19 @@
 
 <script setup lang="ts">
 import Navigation from '../components/Navigation.vue';
+import { useVideoStore } from '~/store/video'
+import { storeToRefs } from 'pinia';
+
+const videoStore = useVideoStore();
+const { video } = storeToRefs(videoStore);
 
 useHead({
   bodyAttrs: {
     class: 'bg-background font-sans overflow-hidden md:h-screen md:flex md:items-center md:justify-center',
   },
 });
+
+
 </script>
 
 <style scoped></style>

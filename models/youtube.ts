@@ -3,7 +3,7 @@ export type Video = {
     0: {
       id: string,
       snippet: {
-        publisheAt: string,
+        publishedAt: string,
         title: string,
         thumbnails: {
           url: string,
