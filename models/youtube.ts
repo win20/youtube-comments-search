@@ -5,12 +5,22 @@ export type Video = {
       snippet: {
         publishedAt: string,
         title: string,
+        channelTitle: string,
         thumbnails: {
-          url: string,
+          default: {
+            url: string
+          }
         },
       },
-      channelTitle: string,
     }
   }
 }
 
+export type LocalStorageVideo = {
+  id: string,
+  title: string,
+  channel: string,
+  views: string,
+  publishedAt: string,
+  thumbnailUrl: string,
+}

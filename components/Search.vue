@@ -13,15 +13,13 @@
 
 <script setup lang="ts">
 import axios from 'axios';
-import { useVideoStore } from '~/store/video';
-import { storeToRefs } from 'pinia';
 
+import { useVideoStore } from '~/store/video';
 import { Video } from 'models/youtube';
 
 const isError = ref(false);
 
 const searchVideo = async () => {
-	// https://www.youtube.com/watch?v=_jUwzVpw-44
 	const videoUrl = (document.querySelector('#video-url') as HTMLInputElement).value;
 	const videoId = videoUrl.split('=')[1];
 
@@ -37,18 +35,9 @@ const searchVideo = async () => {
 		storeVideo(data);
 
 		await navigateTo('/comment-search');
-
-		// await navigateTo({
-		// 	path: '/comment-search',
-		// 	query: {
-		// 		videoTitle: data.items[0].snippet.title,
-		// 	}
-		// });
 	} catch (error) {
 		isError.value = true;
 	}
-
-
 };
 
 </script>
