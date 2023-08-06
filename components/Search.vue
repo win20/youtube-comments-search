@@ -1,9 +1,9 @@
 <template>
 	<div class="pt-6">
-		<input id="video-url" type="text" required
+		<input id="search-input" type="text" required
 			class="py-1 px-4 rounded-2xl mr-2 md:px-5 md:py-2 md:rounded-full md:w-96" />
 		<br class="md:hidden" />
-		<button @click="searchVideo()"
+		<button @click="searchType === 'video' ? searchVideo() : searchComment()"
 			class="text-black font-bold py-1 px-4 bg-gradient-to-tr from-gradientOrange to-gradientRed rounded-full mt-2 md:text-lg md:py-2 md:px-7">
 			Search
 		</button>
@@ -18,9 +18,12 @@ import { Video } from 'models/youtube';
 import { useVideoStore } from '~/store/video';
 
 const isError = ref(false);
+const props =	defineProps<{
+	searchType: 'video' | 'comment'
+}>();
 
 const searchVideo = async () => {
-	const videoUrl = (document.querySelector('#video-url') as HTMLInputElement).value;
+	const videoUrl = (document.querySelector('#search-input') as HTMLInputElement).value;
 	const videoId = videoUrl.split('=')[1];
 
 	try {
@@ -34,12 +37,15 @@ const searchVideo = async () => {
 
 		storeVideo(data);
 
-		console.log(data.items[0].statistics.viewCount);
-
 		await navigateTo('/comment-search');
 	} catch (error) {
 		isError.value = true;
 	}
+};
+
+const searchComment = () => {
+	const commentSearch = (document.querySelector('#search-input') as HTMLInputElement).value;
+	console.log(commentSearch);
 };
 
 </script>

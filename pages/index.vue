@@ -5,14 +5,14 @@
     <div class="flex-col pb-36 mx-auto md:pt-24 md:px-12">
       <h1 class="text-xl text-textWhite font-bold md:text-2xl">Search for a Youtube video</h1>
       <p class="text-textWhite text-sm md:text-md">Please enter the full URL for the video</p>
-      <Search />
+      <Search search-type="video" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import Search from '../components/Search.vue';
 import Navigation from '../components/Navigation.vue';
+import Search from '../components/Search.vue';
 
 useHead({
   bodyAttrs: {

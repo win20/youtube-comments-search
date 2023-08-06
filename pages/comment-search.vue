@@ -15,10 +15,10 @@
               <div class="text-md truncate md:text-xl md:font-bold">{{ localStorageVideo.title }}</div>
               <div class="text-xs md:text-sm">{{ localStorageVideo.channel }}</div>
             </div>
-            <div class="text-xs md:text-sm">{{ localStorageVideo.views }} views | 2 hours ago</div>
+            <div class="text-xs md:text-sm">{{ localStorageVideo.views }} views</div>
           </div>
         </div>
-        <Search />
+        <Search search-type="comment" />
       </div>
     </div>
   </div>
@@ -35,7 +35,6 @@ const { getVideoFromLocalStorage } = videoStore;
 let localStorageVideo: LocalStorageVideo;
 if (process.client) {
   localStorageVideo = getVideoFromLocalStorage();
-  // console.log(localStorageVideo);
 }
 
 useHead({
