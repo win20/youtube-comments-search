@@ -15,6 +15,7 @@
 import axios from 'axios';
 
 import { Video } from 'models/youtube';
+import { LocalStorageVideo } from '~/models/youtube';
 import { useVideoStore } from '~/store/video';
 
 const isError = ref(false);
@@ -43,9 +44,20 @@ const searchVideo = async () => {
 	}
 };
 
-const searchComment = () => {
+const searchComment = async () => {
 	const commentSearch = (document.querySelector('#search-input') as HTMLInputElement).value;
-	console.log(commentSearch);
+	const videoStore = useVideoStore();
+	const { getVideoFromLocalStorage } = videoStore;
+	const video = getVideoFromLocalStorage() as LocalStorageVideo;
+	const videoId = video.id;
+
+	const params = {
+		commentSearch,
+		videoId
+	}
+
+	const response = await axios.get('http://localhost:3000/api/get-comment', { params });
+	console.log(response.data);
 };
 
 </script>
