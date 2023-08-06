@@ -14,8 +14,8 @@
 <script setup lang="ts">
 import axios from 'axios';
 
-import { useVideoStore } from '~/store/video';
 import { Video } from 'models/youtube';
+import { useVideoStore } from '~/store/video';
 
 const isError = ref(false);
 
@@ -33,6 +33,8 @@ const searchVideo = async () => {
 		const { storeVideo } = videoStore;
 
 		storeVideo(data);
+
+		console.log(data.items[0].statistics.viewCount);
 
 		await navigateTo('/comment-search');
 	} catch (error) {

@@ -15,7 +15,7 @@
               <div class="text-md truncate md:text-xl md:font-bold">{{ localStorageVideo.title }}</div>
               <div class="text-xs md:text-sm">{{ localStorageVideo.channel }}</div>
             </div>
-            <div class="text-xs md:text-sm">100k views | 2 hours ago</div>
+            <div class="text-xs md:text-sm">{{ localStorageVideo.views }} views | 2 hours ago</div>
           </div>
         </div>
         <Search />
@@ -25,9 +25,9 @@
 </template>
 
 <script setup lang="ts">
-import Navigation from '../components/Navigation.vue';
-import { useVideoStore } from '~/store/video'
 import { LocalStorageVideo } from '~/models/youtube';
+import { useVideoStore } from '~/store/video';
+import Navigation from '../components/Navigation.vue';
 
 const videoStore = useVideoStore();
 const { getVideoFromLocalStorage } = videoStore;
@@ -35,6 +35,7 @@ const { getVideoFromLocalStorage } = videoStore;
 let localStorageVideo: LocalStorageVideo;
 if (process.client) {
   localStorageVideo = getVideoFromLocalStorage();
+  // console.log(localStorageVideo);
 }
 
 useHead({

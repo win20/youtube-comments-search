@@ -7,10 +7,15 @@ export type Video = {
         title: string,
         channelTitle: string,
         thumbnails: {
-          default: {
+          standard: {
             url: string
           }
         },
+      },
+      statistics: {
+        commentCount: string,
+        likeCount: string,
+        viewCount: string,
       },
     }
   }
