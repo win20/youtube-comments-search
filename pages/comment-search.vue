@@ -12,7 +12,7 @@
             class="w-32 h-20 rounded-lg mr-2 ml-5 shadow-md shadow-gray-800 md:w-48 md:h-32 md:rounded-xl" />
           <div id="test" class="w-80 pr-5 flex flex-col justify-between text-left">
             <div>
-              <div class="text-md truncate md:text-xl md:font-bold">{{ localStorageVideo.title }}</div>
+              <div class="text-sm truncate w-5/6 md:w-[100%] md:text-xl md:font-bold">{{ localStorageVideo.title }}</div>
               <div class="text-xs md:text-sm">{{ localStorageVideo.channel }}</div>
             </div>
             <div class="text-xs md:text-sm">{{ localStorageVideo.views }} views</div>
