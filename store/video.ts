@@ -1,5 +1,5 @@
-import { Video } from "models/youtube";
 import { defineStore } from "pinia";
+import { Video } from "~/models/youtube";
 
 export const useVideoStore = defineStore('videoStore', () => {
   const video = reactive({

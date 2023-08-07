@@ -14,9 +14,9 @@
 <script setup lang="ts">
 import axios from 'axios';
 
-import { Video } from 'models/youtube';
-import { LocalStorageVideo } from '~/models/youtube';
+import { LocalStorageVideo, Video, CommentsList } from '~/models/youtube';
 import { useVideoStore } from '~/store/video';
+import { useCommentsStore } from '~/store/comments';
 
 const isError = ref(false);
 const props =	defineProps<{
@@ -57,7 +57,12 @@ const searchComment = async () => {
 	}
 
 	const response = await axios.get('http://localhost:3000/api/get-comment', { params });
-	console.log(response.data);
+	const data = response.data.items as CommentsList;
+
+	const commentsStore = useCommentsStore();
+	const {storeComments} = commentsStore;
+	storeComments(data);
+	await navigateTo('/comment-results')
 };
 
 </script>

@@ -19,7 +19,7 @@ export type Video = {
       },
     }
   }
-}
+};
 
 export type LocalStorageVideo = {
   id: string,
@@ -28,4 +28,19 @@ export type LocalStorageVideo = {
   views: string,
   publishedAt: string,
   thumbnailUrl: string,
-}
+};
+
+type Comment = {
+  id: string,
+  snippet: {
+    topLevelComment: {
+      snippet: {
+        authorDisplayName: string,
+        authorProfileImageUrl: string,
+        textDisplay: string
+      }
+    }
+  },
+};
+
+export type CommentsList = Array<Comment>;

@@ -5,15 +5,11 @@
       <div class="flex-col pb-36 mx-auto md:pt-24 md:px-12">
         <h1 class="font-bold text-xl mb-8">Results for "Search"</h1>
         <Comment
-          avatar="/assets/images/avatar.jpg"
-          user="TestYoutubeUser"
-          comment-text="This is a very long comment"
-        />
-        <Comment
-          avatar="/assets/images/avatar.jpg"
-          user="TestYoutubeUser"
-          comment-text="This is a very long comment, This is a very long comment"
-        />
+          v-for="comment in localStorageComments"
+          :avatar="comment.snippet.topLevelComment.snippet.authorProfileImageUrl"
+          :user="comment.snippet.topLevelComment.snippet.authorDisplayName"
+          :comment-text="comment.snippet.topLevelComment.snippet.textDisplay"
+         />
       </div>
     </div>
   </div>
@@ -22,6 +18,16 @@
 <script setup lang="ts">
 import Navigation from '~/components/Navigation.vue';
 import Comment from '~/components/Comment.vue';
+import {CommentsList} from '~/models/youtube';
+
+import { useCommentsStore } from '~/store/comments';
+const commentStore = useCommentsStore();
+const {getCommentsFromLocalStorage} = commentStore;
+let localStorageComments: CommentsList;
+
+if (process.client) {
+  localStorageComments = getCommentsFromLocalStorage();
+}
 
 useHead({
   bodyAttrs: {
