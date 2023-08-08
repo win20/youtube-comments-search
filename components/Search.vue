@@ -62,7 +62,12 @@ const searchComment = async () => {
 	const commentsStore = useCommentsStore();
 	const {storeComments} = commentsStore;
 	storeComments(data);
-	await navigateTo('/comment-results')
+	await navigateTo({
+		path: '/comment-results',
+		query: {
+			search: commentSearch,
+		}
+	})
 };
 
 </script>

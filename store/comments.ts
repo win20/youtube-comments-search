@@ -2,9 +2,12 @@ import { defineStore } from "pinia";
 import { CommentsList } from "~/models/youtube";
 
 export const useCommentsStore = defineStore('commentsStore', () => {
-  const comments = reactive<CommentsList>([]);
+  let comments = reactive<CommentsList>([]);
 
   const storeComments = (commentsList: CommentsList) => {
+    localStorage.removeItem('comments');
+    comments = [];
+
     for (const comment of commentsList) {
       comments.push(comment);
     }

@@ -1,9 +1,9 @@
 <template>
   <div>
     <Navigation />
-    <div class="bg-card text-textWhite text-center rounded-2xl h-screen mt-6 pt-12 flex items-center shadow-md shadow-gray-900 md:h-96 md:px-10 md:m-auto">
-      <div class="flex-col pb-36 mx-auto md:pt-24 md:px-12">
-        <h1 class="font-bold text-xl mb-8">Results for "Search"</h1>
+    <div class="bg-card hide-scrollbar text-textWhite text-center rounded-2xl h-screen overflow-auto mt-6 pt-12 shadow-md shadow-gray-900 md:max-h-[49em] md:overflow-x-auto md:overflow-y-auto md:max-w-[90%] md:px-10 md:m-auto">
+      <div class="flex-col pb-36 mx-auto md:pt-24 md:px-12 md:max-w-5xl">
+        <h1 class="font-bold text-xl mb-8">Results for "{{ $route.query.search }}"</h1>
         <Comment
           v-for="comment in localStorageComments"
           :avatar="comment.snippet.topLevelComment.snippet.authorProfileImageUrl"
@@ -37,4 +37,7 @@ useHead({
 </script>
 
 <style scoped>
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
 </style>
