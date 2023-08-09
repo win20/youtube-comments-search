@@ -8,6 +8,11 @@
 
 	<div class="hidden md:block md:absolute md:top-8 md:right-0 text-textWhite text-sm font-bold">
 		<span class="mr-20">
+			<a href="/">
+				Home
+			</a>
+		</span>
+		<span class="mr-20">
 			<a href="https://github.com/win20/youtube-comments-search/issues" target="_blank">
 				Report an issue
 			</a>
@@ -26,7 +31,9 @@
 				<Icon name="basil:cross-outline" color="black" size="40" class="absolute right-0" />
 			</button>
 			<ul class="text-center relative space-y-16 mt-[50%]">
-				<li><a href="https://github.com/win20/youtube-comments-search/issues" target="_blank">Report an issue</a>
+				<li><a href="/">Home</a></li>
+				<li>
+					<a href="https://github.com/win20/youtube-comments-search/issues" target="_blank">Report an issue</a>
 				</li>
 				<li><a href="https://github.com/win20" target="_blank">Github</a></li>
 			</ul>
