@@ -1,14 +1,8 @@
-import * as fs from 'fs';
+import {promises as fs} from 'fs';
 
-export default defineEventHandler((event) => {
-  let data;
+export default defineEventHandler(async (event) => {
+  const data = await fs.readFile('data.json');
+  const dataJson = JSON.parse(data.toString());
 
-  try {
-    data = fs.readFileSync('data.json');
-  } catch (error) {
-    console.log(error);
-    throw error;
-  }
-
-  return JSON.parse(data.toString());
+  return dataJson;
 });
