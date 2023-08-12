@@ -13,6 +13,7 @@
 <script setup lang="ts">
 import Navigation from '../components/Navigation.vue';
 import Search from '../components/Search.vue';
+const config = useRuntimeConfig();
 
 useHead({
   bodyAttrs: {
