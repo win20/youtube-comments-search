@@ -3,7 +3,7 @@
 		<input id="search-input" type="text" required
 			class="py-1 px-4 rounded-2xl mr-2 md:px-5 md:py-2 md:rounded-full md:w-96" />
 		<br class="md:hidden" />
-		<button @click="searchType === 'video' ? searchVideo() : searchComment()"
+		<button @click="props.searchType === 'video' ? searchVideo() : searchComment()"
 			class="text-black font-bold py-1 px-4 bg-gradient-to-tr from-gradientOrange to-gradientRed rounded-full mt-2 md:text-lg md:py-2 md:px-7">
 			Search
 		</button>
@@ -62,6 +62,9 @@ const searchComment = async () => {
 	const commentsStore = useCommentsStore();
 	const {storeComments} = commentsStore;
 	storeComments(data);
+
+	await axios.put('http://localhost:3000/api/update-app-data');
+
 	await navigateTo({
 		path: '/comment-results',
 		query: {
