@@ -1,5 +1,5 @@
 <template>
-  <Navigation :search-count=20 />
+  <Navigation />
   <div
     class="bg-card text-center rounded-2xl h-screen mt-6 pt-12 flex items-center shadow-md shadow-black md:h-72 md:px-10 md:m-auto">
     <div class="flex-col pb-36 mx-auto md:pt-24 md:px-12">
