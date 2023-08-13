@@ -49,10 +49,14 @@ import axios from 'axios';
 
 import { AppData } from 'models/AppData';
 
+const props =	defineProps<{
+	apiBaseUrl: string
+}>();
+
 const enabled = ref(false);
 const isSidebarActive = ref(false);
 
-const result = await axios.get('http://localhost:3000/api/get-app-data');
+const result = await axios.get(`${props.apiBaseUrl}get-app-data`);
 const appData: AppData = result.data;
 
 const toggleSidebar = () => {

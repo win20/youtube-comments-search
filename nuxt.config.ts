@@ -28,7 +28,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     youtubeApiKey: '',
     public: {
-      baseUrl: '',
+      apiBaseUrl: '',
+      devApiBaseUrl: '',
       env: '',
     }
   }

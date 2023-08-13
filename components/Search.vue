@@ -21,6 +21,7 @@ import { useCommentsStore } from '~/store/comments';
 const isError = ref(false);
 const props =	defineProps<{
 	searchType: 'video' | 'comment'
+	apiBaseUrl: string,
 }>();
 
 const searchVideo = async () => {
@@ -28,7 +29,7 @@ const searchVideo = async () => {
 	const videoId = videoUrl.split('=')[1];
 
 	try {
-		const response = await axios.get('http://localhost:3000/api/get-video', { params: { videoId } });
+		const response = await axios.get(`${props.apiBaseUrl}get-video`, { params: { videoId } });
 		const data = response.data as Video;
 
 		isError.value = false;
@@ -56,14 +57,14 @@ const searchComment = async () => {
 		videoId
 	}
 
-	const response = await axios.get('http://localhost:3000/api/get-comment', { params });
+	const response = await axios.get(`${props.apiBaseUrl}get-comment`, { params });
 	const data = response.data.items as CommentsList;
 
 	const commentsStore = useCommentsStore();
 	const {storeComments} = commentsStore;
 	storeComments(data);
 
-	await axios.put('http://localhost:3000/api/update-app-data');
+	await axios.put(`${props.apiBaseUrl}update-app-data`);
 
 	await navigateTo({
 		path: '/comment-results',
