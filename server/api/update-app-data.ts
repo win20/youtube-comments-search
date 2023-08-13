@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
 
   dataJson.searchCount = dataJson.searchCount + 1;
 
-  await fs.writeFile('data.json', JSON.stringify(dataJson, null, 2));
+  await fs.writeFile(`${basePath}data.json`, JSON.stringify(dataJson, null, 2));
 
   return dataJson;
 });
