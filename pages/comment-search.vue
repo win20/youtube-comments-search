@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navigation />
+    <Navigation :api-base-url="apiBaseUrl" />
     <div
       class="bg-card text-center rounded-2xl h-screen mt-6 pt-12 flex items-center shadow-md shadow-gray-900 md:h-96 md:px-10 md:m-auto">
       <div class="flex-col pb-36 mx-auto md:pt-24 md:px-12">
@@ -18,7 +18,7 @@
             <div class="text-xs md:text-sm">{{ localStorageVideo.views }} views</div>
           </div>
         </div>
-        <Search search-type="comment" />
+        <Search search-type="comment" :api-base-url="apiBaseUrl" />
       </div>
     </div>
   </div>
@@ -28,7 +28,12 @@
 import { LocalStorageVideo } from '~/models/youtube';
 import { useVideoStore } from '~/store/video';
 import Navigation from '../components/Navigation.vue';
+const config = useRuntimeConfig();
 
+const apiBaseUrl =
+  config.public.env === 'prod'
+  ? config.public.apiBaseUrl
+  : config.public.devApiBaseUrl;
 const videoStore = useVideoStore();
 const { getVideoFromLocalStorage } = videoStore;
 
