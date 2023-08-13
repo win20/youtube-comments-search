@@ -5,6 +5,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "start": "nuxt start",
+    "deploy": "pm2 start npm --name nuxtjs -- start",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
