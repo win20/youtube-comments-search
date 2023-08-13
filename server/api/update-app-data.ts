@@ -1,7 +1,13 @@
 import {promises as fs} from 'fs';
 
 export default defineEventHandler(async (event) => {
-  const data = await fs.readFile('data.json');
+  const config = useRuntimeConfig();
+  const basePath =
+    config.public.env === 'prod'
+    ? config.publicFolderPath
+    : '';
+
+  const data = await fs.readFile(`${basePath}data.json`);
   let dataJson = JSON.parse(data.toString());
 
   dataJson.searchCount = dataJson.searchCount + 1;
