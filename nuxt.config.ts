@@ -33,6 +33,10 @@ export default defineNuxtConfig({
       devApiBaseUrl: '',
       env: '',
     }
+  },
+
+  routeRules: {
+    '/api/**': { cors: true },
   }
 })
 
