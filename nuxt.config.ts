@@ -27,6 +27,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     youtubeApiKey: '',
+    publicFolderPath: '',
     public: {
       apiBaseUrl: '',
       devApiBaseUrl: '',
