@@ -22,4 +22,4 @@ logs
 .env.*
 !.env.example
 
-data.json
+public/data.json
