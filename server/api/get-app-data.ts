@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
   const basePath =
     config.public.env === 'prod'
     ? config.publicFolderPath
-    : '';
+    : 'public/';
 
   const data = await fs.readFile(`${basePath}data.json`);
   const dataJson = JSON.parse(data.toString());
