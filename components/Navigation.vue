@@ -1,6 +1,6 @@
 <template>
 	<div class="flex justify-between mt-4 mx-5 md:absolute md:top-3 md:left-0 md:text-sm">
-		<span class="ml-3 text-textWhite">{{ appData.searchCount - 1 }} searches made</span>
+		<span class="ml-3 text-textWhite">{{ appData.searchCount }} searches made</span>
 		<button @click="toggleSidebar" class="md:hidden">
 			<Icon name="iconamoon:menu-burger-horizontal-bold" color="white" size="28" class="" />
 		</button>

@@ -10,9 +10,14 @@ export default defineEventHandler(async (event) => {
   const data = await fs.readFile(`${basePath}data.json`);
   let dataJson = JSON.parse(data.toString());
 
-  dataJson.searchCount = dataJson.searchCount + 1;
+  const currentSearchCount = dataJson.searchCount;
+  const newVal = currentSearchCount + 1;
 
-  await fs.writeFile(`${basePath}data.json`, JSON.stringify(dataJson, null, 2));
+  const newData = {
+    searchCount: newVal,
+  };
+
+  await fs.writeFile(`${basePath}data.json`, JSON.stringify(newData, null, 2));
 
   return dataJson;
 });
