@@ -56,8 +56,8 @@ const props =	defineProps<{
 const enabled = ref(false);
 const isSidebarActive = ref(false);
 
-const result = await axios.get(`${props.apiBaseUrl}get-app-data`);
-const appData: AppData = result.data;
+const { data } = await useFetch('/api/get-app-data');
+const appData: AppData = data.value;
 
 const toggleSidebar = () => {
 	isSidebarActive.value = !isSidebarActive.value;

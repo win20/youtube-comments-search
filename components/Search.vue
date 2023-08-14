@@ -64,7 +64,7 @@ const searchComment = async () => {
 	const {storeComments} = commentsStore;
 	storeComments(data);
 
-	await axios.put(`${props.apiBaseUrl}update-app-data`);
+	await useFetch('/api/update-app-data');
 
 	await navigateTo({
 		path: '/comment-results',
