@@ -19,5 +19,5 @@ export default defineEventHandler(async (event) => {
 
   await fs.writeFile(`${basePath}data.json`, JSON.stringify(newData, null, 2));
 
-  return dataJson;
+  return newData;
 });
