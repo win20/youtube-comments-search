@@ -15,6 +15,7 @@ import Navigation from '../components/Navigation.vue';
 import Search from '../components/Search.vue';
 const config = useRuntimeConfig();
 
+
 const apiBaseUrl =
   config.public.env === 'prod'
   ? config.public.apiBaseUrl
