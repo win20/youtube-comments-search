@@ -22,7 +22,7 @@ const apiBaseUrl =
   : config.public.devApiBaseUrl;
 
 useHead({
-  title: 'Youtube Comments Search - Search Video',
+  title: 'Youtube Comments Search - Find Video',
   meta: [
     {
       name: 'description',
