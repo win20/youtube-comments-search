@@ -27,6 +27,7 @@
     "@headlessui/vue": "^1.7.15",
     "@pinia/nuxt": "^0.4.11",
     "axios": "^1.4.0",
+    "nuxt-security": "^0.14.4",
     "pinia": "^2.1.6"
   },
   "overrides": {

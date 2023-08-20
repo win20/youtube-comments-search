@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   app: {
-
     head: {
       script: ['<meta name="google-site-verification" content="jdr9VkEaWVgXh7Pn5auGXxg81AKXc2vLStALqkz51vc" />'],
     }
@@ -24,7 +23,12 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     'nuxt-icon',
     '@pinia/nuxt',
+    'nuxt-security',
   ],
+
+  security: {
+    hidePoweredBy: true,
+  },
 
   googleFonts: {
     families: {
