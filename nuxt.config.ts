@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       script: ['<meta name="google-site-verification" content="jdr9VkEaWVgXh7Pn5auGXxg81AKXc2vLStALqkz51vc" />'],
+
     }
   },
 
@@ -28,6 +29,11 @@ export default defineNuxtConfig({
 
   security: {
     hidePoweredBy: true,
+    headers: {
+      contentSecurityPolicy: {
+        'img-src': ["'self'", "https: data: blob:"],
+      }
+    }
   },
 
   googleFonts: {
