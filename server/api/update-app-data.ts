@@ -7,17 +7,24 @@ export default defineEventHandler(async (event) => {
     ? config.publicFolderPath
     : 'public/';
 
-  const data = await fs.readFile(`${basePath}data.json`);
-  let dataJson = JSON.parse(data.toString());
+  try {
+    const data = await fs.readFile(`${basePath}data.json`);
+    let dataJson = JSON.parse(data.toString());
 
-  const currentSearchCount = dataJson.searchCount;
-  const newVal = currentSearchCount + 1;
+    const currentSearchCount = dataJson.searchCount;
+    const newVal = currentSearchCount + 1;
 
-  const newData = {
-    searchCount: newVal,
-  };
+    const newData = {
+      searchCount: newVal,
+    };
 
-  await fs.writeFile(`${basePath}data.json`, JSON.stringify(newData, null, 2));
+    await fs.writeFile(`${basePath}data.json`, JSON.stringify(newData, null, 2));
 
-  return newData;
+    return newData;
+
+  } catch (error) {
+    return {
+      searchCount: 0,
+    };
+  }
 });
