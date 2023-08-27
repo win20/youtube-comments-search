@@ -7,8 +7,14 @@ export default defineEventHandler(async (event) => {
     ? config.publicFolderPath
     : 'public/';
 
-  const data = await fs.readFile(`${basePath}data.json`);
-  const dataJson = JSON.parse(data.toString());
+  const defaultData = { searchCount: 0 };
 
-  return dataJson;
+  try {
+    const data = await fs.readFile(`${basePath}data.json`);
+    const dataJson = JSON.parse(data.toString());
+    return dataJson;
+
+  } catch (error) {
+    return defaultData;
+  }
 });
